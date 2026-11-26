@@ -1,18 +1,6 @@
 """
 MedBridge — Merge LoRA Adapter into Base Model
 ================================================
-Run this AFTER training to produce a standalone merged model.
-
-Why merge?
-- Adapter-only inference requires loading base model + adapter separately
-- Merged model is a single HuggingFace model — works with vLLM, TGI, Ollama
-- Merged model can be pushed directly to HuggingFace Hub
-
-Output size: ~16 GB (BF16) or ~8 GB (FP16)
-
-Usage:
-    python 05_merge_and_push.py
-    python 05_merge_and_push.py --push --hf-repo YOUR_USERNAME/medbridge-llm-8b
 """
 
 import argparse, torch
